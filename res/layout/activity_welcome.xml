@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/p_back"
+    tools:context="${packageName}.${activityClass}" >
+
+    <RelativeLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#333333"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/back_button"
+            android:onClick="backButton" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/backButton"
+            android:layout_alignBottom="@+id/backButton"
+            android:layout_centerHorizontal="true"
+            android:text="@string/logoCompany"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/exitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:textColor="#FFF"
+            android:onClick="exitAction"
+            android:text="Выйти" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/zayvka"
+        android:textColor="#FFF"
+        android:textSize="30sp" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="57dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:text="@string/noOrder"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFF" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/getOrder"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/scrollView1"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/cbutton"
+        android:onClick="freeOrders"
+        android:text="@string/freeOrders"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/acceptOrder"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/scrollView1"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/cbutton"
+        android:onClick="acceptOrder"
+        android:visibility="gone"
+        android:text="@string/acceptOrder"
+        android:textSize="25sp" />
+
+</RelativeLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.demo.taxom_demo"
+    android:versionCode="9"
+    android:versionName="1.0.7" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.demo.taxom_demo.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.demo.taxom_demo.permission.C2D_MESSAGE" />
+
+    <application
+        android:name="com.demo.taxom_demo.Application"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+         >
+        <activity
+            android:name="com.demo.taxom_demo.Login_Activity"
+            android:label="@string/title_activity_login_"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+
+        </activity>
+        <activity
+            android:name="com.demo.taxom_demo.OrderActivity"
+            android:label="@string/title_activity_order"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            
+        </activity>
+        <activity
+            android:name="com.demo.taxom_demo.Register"
+            android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name="com.demo.taxom_demo.OrderType"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+
+        <service android:name="com.parse.PushService" />
+
+        <receiver android:name="com.parse.ParseBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!--
+				  IMPORTANT: If you change the package name of this sample app,
+				  change "com.parse.tutorials.pushnotifications" in the lines
+				  below to match the new package name.
+                -->
+                <category android:name="com.demo.taxom_demo" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.demo.taxom_demo.RepeatingAlarmService"
+            android:process=":remote" />
+        <receiver
+            android:name="com.demo.taxom_demo.RepeatingCheckService"
+            android:process=":remote" />
+
+        <activity
+            android:name="com.demo.taxom_demo.WelcomeActivity"
+            android:label="@string/title_activity_welcome"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+
+        <service
+            android:name="com.demo.taxom_demo.GPSService"
+            android:enabled="true" />
+        <service
+            android:name="com.demo.taxom_demo.CheckOrder"
+            android:enabled="true" />
+
+        <activity
+            android:name="com.demo.taxom_demo.GetOrder"
+            android:label="@string/title_activity_get_order"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.demo.taxom_demo.ConfigActivity"
+            android:label="@string/title_activity_config"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.demo.taxom_demo.FixedPrice"
+            android:label="@string/title_activity_fixed_price"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+
+            
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,180 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/land_car_back"
+    tools:context="${packageName}.${activityClass}"
+    android:keepScreenOn="true" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#333333"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/back_button"
+            android:onClick="backButton" />
+
+        <Button
+            android:id="@+id/exitButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cbutton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:onClick="exitAction"
+            android:textSize="25sp"
+            android:text="Выйти" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/logoCompany"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFF"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/zayvka"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="263dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="520dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/noOrder"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFF"
+                android:textSize="35sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/layoutButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/fromBordur"
+            android:layout_width="250dp"
+            android:layout_height="90dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/getOrder"
+            android:layout_marginRight="65dp"
+            android:background="@drawable/cbutton"
+            android:onClick="fromBordur"
+            android:text="@string/fromBordur"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/getOrder"
+            android:layout_width="250dp"
+            android:layout_height="90dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="68dp"
+            android:background="@drawable/cbutton"
+            android:onClick="freeOrders"
+            android:text="@string/freeOrders"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/finishBordur"
+        android:layout_width="250dp"
+        android:layout_height="90dp"
+        android:layout_below="@+id/scrollView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/cbutton"
+        android:onClick="StopOrder"
+        android:visibility="gone"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Приехали" />
+
+    <RelativeLayout
+        android:id="@+id/AcceptDecline"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/acceptOrder"
+            android:layout_width="250dp"
+            android:layout_height="90dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="67dp"
+            android:background="@drawable/cbutton"
+            android:onClick="acceptOrder"
+            android:text="@string/acceptOrder"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/declineOrder"
+            android:layout_width="250dp"
+            android:layout_height="90dp"
+            android:layout_alignBaseline="@+id/acceptOrder"
+            android:layout_alignBottom="@+id/acceptOrder"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="48dp"
+            android:background="@drawable/cbutton"
+            android:onClick="declineOrder"
+            android:text="Отклонить"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

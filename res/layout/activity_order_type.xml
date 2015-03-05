@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}"
+    android:background="@drawable/p_back" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonTime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:textSize="28sp"
+        android:text="@string/uchot"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFF" />
+
+    <Button
+        android:id="@+id/buttonTime"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:textSize="25sp"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_centerVertical="true"
+        android:background="@drawable/cbutton"
+        android:gravity="center|center_vertical"
+        android:onClick="SetTimer"
+        android:text="@string/tarifTime" />
+
+    <Button
+        android:id="@+id/buttonDistance"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:textSize="25sp"
+        android:layout_alignLeft="@+id/buttonTime"
+        android:layout_below="@+id/buttonTime"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/cbutton"
+        android:onClick="SetDistancer"
+        android:text="@string/tarifDistance" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#333333" >
+        
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/back_button"
+            android:onClick="backButton" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/backButton"
+            android:layout_alignBottom="@+id/backButton"
+            android:layout_centerHorizontal="true"
+            android:text="@string/logoCompany"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/fixedPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/buttonDistance"
+        android:layout_alignRight="@+id/buttonDistance"
+        android:layout_below="@+id/buttonDistance"
+        android:layout_marginTop="15dp"
+        android:textSize="25sp"
+        android:background="@drawable/cbutton"
+        android:text="@string/fixedPriceText" 
+        android:visibility="gone"/>
+
+</RelativeLayout>
